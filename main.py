@@ -40,10 +40,20 @@ def perguntar_groq(mensagem):
     }
 
     response = requests.post(url, headers=headers, json=data)
-    resposta = response.json()
 
-    return resposta["choices"][0]["message"]["content"]
+    try:
+        resposta = response.json()
 
+        if "choices" in resposta:
+            return resposta["choices"][0]["message"]["content"]
+        else:
+            print("Erro da API:", resposta)
+            return "Hmm... tive um problema aqui nos mares digitais 🌊"
+
+    except Exception as e:
+        print("Erro geral:", e)
+        return "Algo deu errado por aqui..."
+        
 @bot.event
 async def on_ready():
     print(f"Logado como {bot.user}")
