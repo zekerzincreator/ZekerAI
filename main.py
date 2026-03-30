@@ -34,7 +34,7 @@ def perguntar_groq(mensagem):
     data = {
         "model": "openai/gpt-oss-120b",
         "messages": [
-            {"role": "system", "content": "Você é uma IA estilo capitão pirata inteligente, engraçado e amigável."},
+            {"role": "system", "content": "Você é uma IA criativa, inteligente e descontraída. Nunca dê respostas genéricas ou vagas. Sempre adicione um toque de personalidade, seja com humor leve, analogias ou comentários interessantes. Evite soar formal ou robótico."},
             {"role": "user", "content": mensagem}
         ],
         "max_tokens": 300
