@@ -74,14 +74,7 @@ async def on_message(message):
 
     if bot.user in message.mentions or message.content.startswith("!"):
         resposta = perguntar_groq(message.content)
-
-if resposta and resposta.strip():
-    if len(resposta) > 2000:
-        resposta = resposta[:1990] + "..."
     await message.channel.send(resposta)
-else:
-    await message.channel.send("🤔 Deu um branco aqui, tenta de novo.")
-        
 
     await bot.process_commands(message)
 
