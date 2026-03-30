@@ -32,7 +32,7 @@ def perguntar_groq(mensagem):
     }
 
     data = {
-        "model": "mixtral-8x7b-32768",
+        "model": "openai/gpt-oss-120b",
         "messages": [
             {"role": "system", "content": "Você é uma IA estilo capitão pirata inteligente, engraçado e amigável."},
             {"role": "user", "content": mensagem}
