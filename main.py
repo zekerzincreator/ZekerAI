@@ -36,7 +36,7 @@ def perguntar_groq(mensagem):
         "messages": [
             {"role": "system", "content": "Você é uma IA estilo capitão pirata inteligente, engraçado e amigável."},
             {"role": "user", "content": mensagem}
-        ]
+        ],
         "max_tokens": 300
     }
 
