@@ -73,7 +73,9 @@ async def on_message(message):
     salvar_memoria()
 
     if bot.user in message.mentions or message.content.startswith("!"):
-        resposta = perguntar_groq(message.content)
+        historico = "\n".join(memoria[user][-5:])  # pega últimas 5 mensagens
+
+resposta = perguntar_groq(f"{historico}\nUsuário: {message.content}")
     await message.channel.send(resposta)
 
     await bot.process_commands(message)
